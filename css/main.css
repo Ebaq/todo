@@ -2,7 +2,47 @@ html, body {
   min-height: 100vh;
 }
 
+.display-4 {
+  color: #FFF;
+  font-weight: bold;
+}
+
+.mb-5,
+.empty-list__title,
+.card-header {
+  color: #FFF;
+}
+
+.card-header {
+  border-color: #fff;
+}
+
+.form-group input {
+  color: #fff;
+  border-radius: 10px;
+  background-color: #3c3c3c;
+}
+
+.form-control:focus{
+  color: #fff;
+  background-color: #535353;
+}
+
+.card,
+#emptyList,
+.list-group-item {
+  background-color: #212121;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .75);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .75);
+}
+
+.task-title {
+  color: #fff;
+}
+
 body {
+  background-color: #2C2C2C;
   padding-top: 30px;
   display: flex;
   flex-direction: column;

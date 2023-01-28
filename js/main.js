@@ -15,6 +15,7 @@ checkEmptyList();
 form.addEventListener("submit", addTask);
 tasksList.addEventListener("click", deleteTask);
 tasksList.addEventListener("click", doneTask);
+form.addEventListener("click", deleteAllTasks);
 
 function addTask(event) {
   event.preventDefault();
@@ -47,6 +48,24 @@ function deleteTask(event) {
   saveToLocalStorage();
   parentNode.remove();
   checkEmptyList();
+}
+
+function deleteAllTasks(event) {
+  if (event.target.dataset.action !== "deleteAll") return;
+  const taskItems = document.querySelectorAll(".task-item");
+
+  taskItems.forEach((task) => task.remove());
+
+  tasks = [];
+  saveToLocalStorage();
+
+  if (!emptyList) {
+    const emptyListHTML = `<li id="emptyList" class="list-group-item empty-list">
+        <img src="./img/leaf.svg" alt="Empty" width="48" class="mt-3">
+        <div class="empty-list__title">Список дел пуст</div>
+    </li>`;
+    tasksList.insertAdjacentHTML("afterbegin", emptyListHTML);
+  }
 }
 
 function doneTask(event) {
